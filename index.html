@@ -253,6 +253,50 @@
                 font-size: 2.4rem;
             }
         }
+
+        .certifications {
+            margin-top: 4rem;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            align-items: center;
+        }
+
+        .cert-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .cert-card img {
+            max-width: 90px;
+            height: auto;
+            margin-bottom: 1rem;
+            filter: grayscale(100%);
+            transition: filter 0.2s ease;
+        }
+
+        .cert-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        .cert-card p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+        }
     </style>
 </head>
 
@@ -356,6 +400,39 @@
                 <div class="tags">
                     <span>OpenSearch</span><span>AWS</span><span>Terraform</span>
                 </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="certifications" class="container certifications">
+        <h2>Certifications</h2>
+
+        <div class="cert-grid">
+
+            <div class="cert-card">
+                <img src="images/certs/elastic.png" alt="Elasticsearch Certified Engineer">
+                <p>Elasticsearch Certified Engineer</p>
+            </div>
+
+            <div class="cert-card">
+                <img src="images/certs/google-cloud.png" alt="Google Cloud Digital Leader">
+                <p>Google Cloud Certified – Digital Leader</p>
+            </div>
+
+            <div class="cert-card">
+                <img src="images/certs/github.png" alt="GitHub Copilot">
+                <p>GitHub Copilot</p>
+            </div>
+
+            <div class="cert-card">
+                <img src="images/certs/redis.png" alt="Redis Certified – RediSearch">
+                <p>Redis Certified – RediSearch</p>
+            </div>
+
+            <div class="cert-card">
+                <img src="images/certs/stackroute.png" alt="Prompt Engineering Architect Program">
+                <p>Prompt Engineering Architect Program</p>
             </div>
 
         </div>
