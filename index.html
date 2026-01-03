@@ -292,6 +292,80 @@
             padding: 5rem 2rem;
             border-radius: 32px;
             text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Form Styles */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #ccc;
+        }
+
+        .form-control {
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #475569;
+            background: #1e293b;
+            color: #fff;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn-submit {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent);
+        }
+
+        .form-status {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+            text-align: center;
+        }
+
+        .form-status.success {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+            display: block;
         }
 
         .contact-box a {
@@ -338,7 +412,7 @@
             </div>
         </section>
 
-        <section id="expertise" class="container expertise">
+        <section id="about" class="container expertise">
             <h2>Expertise & Technical Focus</h2>
             <p class="section-subtitle">
                 Enterprise Search · Agentic AI · LLM Systems
@@ -560,9 +634,32 @@
         <section id="contact" class="container">
             <div class="contact-box">
                 <h2>Let's build something intelligent</h2>
-                <a href="mailto:srivastavark@gmail.com">srivastavark@gmail.com</a>
-                <p style="margin-top: 1.5rem;"><a href="https://www.linkedin.com/in/srivastavark/" target="_blank"
-                        style="font-size: 1rem; opacity: 0.8;">Connect on LinkedIn</a></p>
+                <p style="color: #94a3b8; margin-top: 0.5rem; margin-bottom: 2rem;">
+                    Have a project in mind or want to discuss AI Search? Send me a message.
+                </p>
+
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" placeholder="How can I help you?"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+
+                <p style="margin-top: 2rem; font-size: 0.9rem; color: #64748b;">
+                    Or email me directly at <a href="mailto:srivastavark@gmail.com"
+                        style="color: var(--accent); text-decoration: none;">srivastavark@gmail.com</a>
+                </p>
             </div>
         </section>
     </main>
@@ -570,6 +667,36 @@
     <footer>
         <p>&copy; 2026 Rajeev Srivastava | AI Search Architect</p>
     </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const statusDiv = document.getElementById('formStatus');
+
+            // Construct mailto link
+            const subject = `Portfolio Inquiry from ${name}`;
+            const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+            const mailtoLink = `mailto:srivastavark@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Open email client
+            window.location.href = mailtoLink;
+
+            // Show feedback
+            statusDiv.textContent = `Thanks ${name}! Opening your email client...`;
+            statusDiv.className = 'form-status success';
+
+            // Reset form
+            this.reset();
+
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 5000);
+        });
+    </script>
 
 </body>
 
