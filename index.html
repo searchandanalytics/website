@@ -4,25 +4,45 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rajeev Srivastava | AI Search Architect</title>
 
-    <!-- Fonts -->
+    <title>Rajeev Srivastava | AI Search Architect & Agentic AI Engineer</title>
+    <meta name="description"
+        content="Portfolio of Rajeev Srivastava, an AI Search Architect with 19+ years of experience in Semantic Search, Vector Databases, RAG pipelines, and Agentic AI systems.">
+    <meta name="keywords"
+        content="AI Search Architect, Agentic AI, RAG, Vector Search, Semantic Search, OpenSearch, Elasticsearch, LangGraph, Search Migration">
+    <meta name="author" content="Rajeev Srivastava">
+    <link rel="canonical" href="https://yourdomain.com" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rajeev Srivastava",
+      "jobTitle": "AI Search Architect",
+      "url": "https://yourdomain.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/srivastavark/"
+      ],
+      "description": "Expert in Semantic Search, Vector Retrieval, RAG pipelines, and Agentic AI systems.",
+      "knowsAbout": ["AI Search", "Vector Databases", "Agentic AI", "Elasticsearch", "OpenSearch", "RAG"]
+    }
+    </script>
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
         :root {
-            --primary: #1e3a8a;
-            --accent: #3b82f6;
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #38bdf8;
             --bg: #f8fafc;
             --text: #0f172a;
             --muted: #64748b;
-            --card: #ffffff;
-            --border: #e5e7eb;
+            --card: rgba(255, 255, 255, 0.95);
+            --border: #e2e8f0;
         }
 
         * {
@@ -38,7 +58,9 @@
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text);
-            background: var(--bg);
+            background-color: var(--bg);
+            background-image: radial-gradient(#cbd5e1 0.7px, transparent 0.7px);
+            background-size: 32px 32px;
             line-height: 1.6;
         }
 
@@ -46,11 +68,10 @@
         h2,
         h3 {
             font-family: 'Poppins', sans-serif;
-            line-height: 1.3;
         }
 
         .container {
-            max-width: 1150px;
+            max-width: 1100px;
             margin: auto;
             padding: 0 1.5rem;
         }
@@ -60,7 +81,8 @@
             position: fixed;
             width: 100%;
             top: 0;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
         }
@@ -69,11 +91,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            height: 75px;
         }
 
         nav a.logo {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
@@ -81,211 +103,176 @@
 
         nav ul {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             list-style: none;
         }
 
         nav ul a {
             text-decoration: none;
-            color: var(--muted);
+            color: var(--text);
             font-weight: 500;
-        }
-
-        nav ul a:hover {
-            color: var(--primary);
+            font-size: 0.95rem;
         }
 
         /* Hero */
         .hero {
-            padding: 140px 0 100px;
-            background: linear-gradient(135deg, #e0e7ff, #f8fafc);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-            align-items: center;
+            padding: 180px 0 120px;
+            background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.05), transparent);
+            text-align: center;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p.lead {
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             color: var(--muted);
-            margin-bottom: 2rem;
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
         }
 
         .cta a {
-            display: inline-block;
-            margin-right: 1rem;
-            padding: 0.75rem 1.6rem;
-            border-radius: 8px;
+            padding: 0.9rem 2.2rem;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
+            transition: 0.3s;
         }
 
         .cta .primary {
             background: var(--primary);
             color: #fff;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2);
         }
 
         .cta .secondary {
-            border: 2px solid var(--primary);
-            color: var(--primary);
+            background: #fff;
+            border: 1px solid var(--border);
+            color: var(--text);
         }
 
         /* Sections */
         section {
-            padding: 90px 0;
+            padding: 100px 0;
         }
 
-        section h2 {
-            font-size: 2.1rem;
-            margin-bottom: 2rem;
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3.5rem;
+            position: relative;
         }
 
-        /* About */
-        .about p {
-            max-width: 850px;
-            margin-bottom: 1.2rem;
-            color: var(--muted);
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 5px;
+            background: var(--primary);
+            margin-top: 15px;
+            border-radius: 3px;
         }
 
-        .capabilities {
+        /* Capability Cards */
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .capability {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: 12px;
-        }
-
-        .capability h4 {
-            margin-bottom: 0.6rem;
-        }
-
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .project {
+        .card {
             background: var(--card);
-            border-radius: 14px;
-            padding: 2rem;
             border: 1px solid var(--border);
-            transition: transform 0.2s ease;
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: 0.3s ease-out;
         }
 
-        .project:hover {
-            transform: translateY(-4px);
-        }
-
-        .project h3 {
-            margin-bottom: 0.4rem;
+        /* Projects */
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: 0.3s;
         }
 
         .meta {
             font-size: 0.85rem;
-            color: var(--muted);
-            margin-bottom: 1rem;
-        }
-
-        .project ul {
-            margin-left: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .tags span {
-            display: inline-block;
-            background: #eef2ff;
-            color: #1e40af;
-            padding: 0.3rem 0.6rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            margin: 0.2rem;
-        }
-
-        /* Contact */
-        .contact-box {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 2.5rem;
-            border-radius: 14px;
-            max-width: 700px;
-        }
-
-        .contact-box a {
+            font-weight: 700;
             color: var(--primary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
             font-weight: 600;
-            text-decoration: none;
         }
 
-        /* Footer */
-        footer {
-            background: #020617;
-            color: #cbd5f5;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-        }
-
-        .certifications {
-            margin-top: 4rem;
-        }
-
+        /* Fixed Alignment for Certifications */
         .cert-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            align-items: stretch;
         }
 
         .cert-card {
             background: #ffffff;
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: 0.3s;
+            min-height: 260px;
         }
 
         .cert-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .cert-image-container {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
         }
 
         .cert-card img {
-            max-width: 90px;
-            height: auto;
-            margin-bottom: 1rem;
+            max-width: 100%;
+            max-height: 75px;
+            object-fit: contain;
             filter: grayscale(100%);
-            transition: filter 0.2s ease;
+            transition: 0.3s;
         }
 
         .cert-card:hover img {
@@ -293,9 +280,32 @@
         }
 
         .cert-card p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            color: var(--text);
+            margin: 0;
+        }
+
+        /* Contact */
+        .contact-box {
+            background: var(--text);
+            color: #fff;
+            padding: 5rem 2rem;
+            border-radius: 32px;
+            text-align: center;
+        }
+
+        .contact-box a {
+            color: var(--accent);
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
         }
     </style>
 </head>
@@ -305,8 +315,8 @@
     <header>
         <div class="container">
             <nav>
-                <a class="logo" href="#">Rajeev</a>
-                <ul>
+                <a class="logo" href="/">RAJEEV SRIVASTAVA</a>
+                <ul role="list">
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -315,139 +325,250 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container hero-grid">
-            <div>
-                <h1>Rajeev Srivastava</h1>
-                <p class="lead">
-                    AI Search Architect & Agentic AI Engineer designing intelligent search systems that retrieve,
-                    reason, validate, and scale in production.
-                </p>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>AI Search Architect</h1>
+                <p class="lead">Designing intelligent search systems that retrieve, reason, validate, and scale in
+                    production. 19+ years of engineering excellence.</p>
                 <div class="cta">
                     <a href="#projects" class="primary">View Projects</a>
                     <a href="#contact" class="secondary">Contact Me</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="about container">
-        <h2>About Me</h2>
-        <p>
-            I am a Search Architect with 19+ years of experience designing and scaling enterprise search
-            and discovery platforms across retail, finance, publishing, and automotive domains.
-        </p>
-        <p>
-            My work spans semantic search, vector retrieval, RAG pipelines, and agentic AI systems,
-            with a strong focus on relevance, observability, and production reliability.
-        </p>
+        <section id="expertise" class="container expertise">
+            <h2>Expertise & Technical Focus</h2>
+            <p class="section-subtitle">
+                Enterprise Search · Agentic AI · LLM Systems
+            </p>
 
-        <div class="capabilities">
-            <div class="capability">
-                <h4>AI Search Architecture</h4>
-                <p>End-to-end design of scalable, production-grade search systems.</p>
+            <div class="expertise-grid">
+
+                <div class="expertise-card">
+                    <h3>AI Search & Discovery Architecture</h3>
+                    <p>
+                        Designing enterprise-scale search platforms that combine
+                        keyword relevance, semantic understanding, and intelligent retrieval.
+                    </p>
+                    <ul>
+                        <li>Hybrid keyword + semantic search</li>
+                        <li>Vector search & ranking fusion</li>
+                        <li>Relevance evaluation frameworks</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3>Elasticsearch & OpenSearch</h3>
+                    <p>
+                        Deep production experience building and evolving large-scale
+                        Elasticsearch and OpenSearch platforms.
+                    </p>
+                    <ul>
+                        <li>Elasticsearch (1.x → 8.x)</li>
+                        <li>OpenSearch & OpenSearch Serverless (AWS)</li>
+                        <li>Analyzers, scoring, tuning, observability</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3>Agentic AI & RAG Systems</h3>
+                    <p>
+                        Architecting agent-based AI workflows that retrieve, reason,
+                        validate, and improve answers.
+                    </p>
+                    <ul>
+                        <li>Retrieval-Augmented Generation (RAG)</li>
+                        <li>LangChain & LangGraph orchestration</li>
+                        <li>Reasoning & validation loops</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3>LLM Fine-Tuning & Adaptation</h3>
+                    <p>
+                        Fine-tuning and adapting modern LLMs for domain-specific use
+                        cases with efficiency and control.
+                    </p>
+                    <ul>
+                        <li>Phi-3 Mini fine-tuning using MLX</li>
+                        <li>LoRA-based parameter-efficient training</li>
+                        <li>Adapter-based inference & evaluation</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3>Cloud-Native & Scalable Systems</h3>
+                    <p>
+                        Designing secure, observable, and scalable infrastructure
+                        for search and AI workloads.
+                    </p>
+                    <ul>
+                        <li>AWS-native architectures</li>
+                        <li>Ingestion pipelines & automation</li>
+                        <li>Production monitoring & reliability</li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="capability">
-                <h4>Semantic & Vector Search</h4>
-                <p>Dense embeddings, hybrid retrieval, ranking fusion.</p>
+        </section>
+
+        <section id="projects" class="container">
+            <h2>Selected Projects</h2>
+
+            <div class="grid-3">
+
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <span class="meta">Global Publishing & Education Platform</span>
+                    <h3>Enterprise Content Discovery Platform</h3>
+                    <p>
+                        Designed and scaled a centralized enterprise search platform using
+                        <strong>Elasticsearch</strong> to power content discovery across global
+                        education products.
+                    </p>
+                    <ul>
+                        <li>Led Elasticsearch upgrades from <strong>1.x → 6.x</strong> with zero downtime</li>
+                        <li>Implemented multilingual analyzers, autosuggest, faceting, and fuzzy search</li>
+                        <li>Built ingestion pipelines and analytics dashboards for relevance monitoring</li>
+                    </ul>
+                    <div class="tag-container">
+                        <span class="tag">Elasticsearch</span>
+                        <span class="tag">Search Relevance</span>
+                        <span class="tag">Multilingual Search</span>
+                        <span class="tag">AWS</span>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <span class="meta">Global Furniture Retailer</span>
+                    <h3>AI-Powered Knowledge Search Platform</h3>
+                    <p>
+                        Built a multilingual AI-driven knowledge search system combining
+                        <strong>Elasticsearch-style relevance models</strong> with
+                        vector-based semantic retrieval.
+                    </p>
+                    <ul>
+                        <li>Hybrid keyword + semantic search with ranking fusion</li>
+                        <li>Vector indexing using MongoDB Atlas Vector Search</li>
+                        <li>FastAPI-based ingestion and retrieval services</li>
+                    </ul>
+                    <div class="tag-container">
+                        <span class="tag">Semantic Search</span>
+                        <span class="tag">Vector Search</span>
+                        <span class="tag">RAG</span>
+                        <span class="tag">FastAPI</span>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <span class="meta">Global Financial Services</span>
+                    <h3>Surveillance & Risk Analytics Search</h3>
+                    <p>
+                        Architected large-scale <strong>Elasticsearch</strong> clusters for
+                        indexing and analyzing enterprise communications to support
+                        regulatory and behavioral risk detection.
+                    </p>
+                    <ul>
+                        <li>Designed secure Elasticsearch clusters with PKI-based access</li>
+                        <li>Built high-volume ingestion pipelines into Elasticsearch</li>
+                        <li>Implemented observability using Kibana and Elastic Stack</li>
+                    </ul>
+                    <div class="tag-container">
+                        <span class="tag">Elasticsearch</span>
+                        <span class="tag">Kibana</span>
+                        <span class="tag">Observability</span>
+                        <span class="tag">Security</span>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card">
+                    <span class="meta">Global Investment Banking Platform</span>
+                    <h3>Market Intelligence & Research Search</h3>
+                    <p>
+                        Developed a semantic search solution using <strong>OpenSearch</strong>
+                        to surface market research and intelligence content with evolving
+                        relevance requirements.
+                    </p>
+                    <ul>
+                        <li>Custom analyzers, tokenization, and relevance tuning</li>
+                        <li>Dynamic synonym management via Amazon S3</li>
+                        <li>Search APIs aligned with business relevance KPIs</li>
+                    </ul>
+                    <div class="tag-container">
+                        <span class="tag">OpenSearch</span>
+                        <span class="tag">Semantic Search</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Relevance Tuning</span>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project-card">
+                    <span class="meta">Global Automotive Manufacturer</span>
+                    <h3>Cloud-Native Search Platform Migration</h3>
+                    <p>
+                        Led the migration of a mission-critical enterprise search platform
+                        from <strong>Apache Solr to OpenSearch Serverless</strong> on AWS.
+                    </p>
+                    <ul>
+                        <li>Defined cloud-native search architecture and migration strategy</li>
+                        <li>Automated ingestion pipelines using Terraform</li>
+                        <li>Delivered zero-downtime platform modernization</li>
+                    </ul>
+                    <div class="tag-container">
+                        <span class="tag">OpenSearch Serverless</span>
+                        <span class="tag">Solr</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Terraform</span>
+                    </div>
+                </article>
+
             </div>
-            <div class="capability">
-                <h4>Agentic AI & RAG</h4>
-                <p>LangGraph-based workflows with reasoning and validation loops.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="container">
-        <h2>Featured Projects</h2>
-
-        <div class="projects-grid">
-
-            <div class="project">
-                <h3>Enterprise AI Knowledge Search</h3>
-                <p class="meta">Global Furniture Retailer · Multilingual Search</p>
-                <ul>
-                    <li>Hybrid semantic + keyword search with ranking fusion</li>
-                    <li>MongoDB Atlas Vector Search & FastAPI services</li>
-                    <li>Agent-assisted multilingual ingestion workflows</li>
-                </ul>
-                <div class="tags">
-                    <span>Semantic Search</span><span>Vector DB</span><span>RAG</span><span>LangChain</span>
+        <section id="certifications" class="container">
+            <h2>Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-image-container"><img src="images/certs/elastic.png" alt="Elastic"></div>
+                    <p>Elasticsearch Certified Engineer</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-image-container"><img src="images/certs/google.png" alt="GCP"></div>
+                    <p>Google Cloud Digital Leader</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-image-container"><img src="images/certs/github.jpeg" alt="GitHub"></div>
+                    <p>GitHub Copilot Specialist</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-image-container"><img src="images/certs/redis.png" alt="Redis"></div>
+                    <p>Redis Certified – RediSearch</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-image-container"><img src="images/certs/stackroute.png" alt="StackRoute"></div>
+                    <p>Prompt Engineering Architect</p>
                 </div>
             </div>
+        </section>
 
-            <div class="project">
-                <h3>AI Market Intelligence Search</h3>
-                <p class="meta">Global Investment Banking Platform</p>
-                <ul>
-                    <li>OpenSearch-based semantic discovery</li>
-                    <li>Dynamic synonym updates via S3</li>
-                    <li>Relevance tuning aligned with product KPIs</li>
-                </ul>
-                <div class="tags">
-                    <span>OpenSearch</span><span>Semantic Search</span><span>AWS</span>
-                </div>
+        <section id="contact" class="container">
+            <div class="contact-box">
+                <h2>Let's build something intelligent</h2>
+                <a href="mailto:srivastavark@gmail.com">srivastavark@gmail.com</a>
+                <p style="margin-top: 1.5rem;"><a href="https://www.linkedin.com/in/srivastavark/" target="_blank"
+                        style="font-size: 1rem; opacity: 0.8;">Connect on LinkedIn</a></p>
             </div>
-
-            <div class="project">
-                <h3>Cloud-Native Search Migration</h3>
-                <p class="meta">Global Automotive Manufacturer</p>
-                <ul>
-                    <li>Solr → OpenSearch Serverless migration</li>
-                    <li>Terraform-based ingestion automation</li>
-                    <li>Zero-downtime platform modernization</li>
-                </ul>
-                <div class="tags">
-                    <span>OpenSearch</span><span>AWS</span><span>Terraform</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="certifications" class="container certifications">
-        <h2>Certifications</h2>
-
-        <div class="cert-grid">
-
-            <div class="cert-card">
-                <img src="images/certs/elastic.png" alt="Elasticsearch Certified Engineer">
-                <p>Elasticsearch Certified Engineer</p>
-            </div>
-
-            <div class="cert-card">
-                <img src="images/certs/google-cloud.png" alt="Google Cloud Digital Leader">
-                <p>Google Cloud Certified – Digital Leader</p>
-            </div>
-
-            <div class="cert-card">
-                <img src="images/certs/github.png" alt="GitHub Copilot">
-                <p>GitHub Copilot</p>
-            </div>
-
-            <div class="cert-card">
-                <img src="images/certs/redis.png" alt="Redis Certified – RediSearch">
-                <p>Redis Certified – RediSearch</p>
-            </div>
-
-            <div class="cert-card">
-                <img src="images/certs/stackroute.png" alt="Prompt Engineering Architect Program">
-                <p>Prompt Engineering Architect Program</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact" class="container">
-        <h2>Contact</h2>
-        <div class="contact-box">
-            <p>Email: <a href="mailto:srivastavark@gmail.com">srivastavark@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/srivastavark/" target="_blank">View Profile</a></p>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <p>© 2026 Rajeev Srivastava · AI Search Architect</p>
+        <p>&copy; 2026 Rajeev Srivastava | AI Search Architect</p>
     </footer>
 
 </body>
