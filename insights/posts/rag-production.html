@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Naive RAG Fails in Production | Rajeev Srivastava</title>
+  <meta name="description" content="Why Naive RAG Fails in Production — practical notes on RAG systems by Rajeev Srivastava."/>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="header">
+  <div class="container">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div>
+          <strong>Rajeev Srivastava</strong>
+          <span>AI Search Architect</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="/#about">Expertise</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/insights/">Tech / Insights</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle light theme" aria-pressed="false" title="Toggle theme">☀︎</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="btn primary" href="/#contact">Let's Talk</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="article-page">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/insights/">Tech / Insights</a>
+      <span style="color:var(--text-muted);">/</span>
+      <span>RAG</span>
+    </div>
+
+    <article class="post">
+      <div class="meta">RAG</div>
+      <h1>Why Naive RAG Fails in Production</h1>
+      <div class="post-meta">January 6, 2026 · 7 min read</div>
+
+      <h2>Naive RAG (what it usually is)</h2>
+      <p>Index chunks, retrieve top-K, and prompt the LLM. It works in demos — then breaks under real traffic, messy documents, and ambiguous questions.</p>
+      <ul>
+        <li>Chunking based only on tokens, not meaning.</li>
+        <li>No evaluation loop.</li>
+        <li>No grounding guarantees.</li>
+      </ul>
+
+      <h2>Production-grade RAG checklist</h2>
+      <p>If you implement only a few things, start here:</p>
+      <ul>
+        <li>Query understanding and routing (FAQ vs exploratory vs lookup).</li>
+        <li>Better segmentation (semantic chunks, headers, tables).</li>
+        <li>Retrieval diagnostics (why did we pick these passages?).</li>
+        <li>Answer verification (citations, confidence, refusals when needed).</li>
+      </ul>
+
+      <h2>Evaluation loops you actually need</h2>
+      <p>RAG is a retrieval system plus a generation system. Measure both.</p>
+      <ul>
+        <li>Retrieval: recall@K on a labeled set.</li>
+        <li>Generation: faithfulness/grounding + helpfulness.</li>
+        <li>End-to-end: task success rate.</li>
+      </ul>
+
+      <h2>Where agents help</h2>
+      <p>Agents are useful when the workflow requires tool use, iterative retrieval, or validation — not just a longer prompt.</p>
+      <ul>
+        <li>Multi-hop retrieval.</li>
+        <li>Structured extraction from documents.</li>
+        <li>Compare/contrast across sources with verification.</li>
+      </ul>
+
+      <hr class="section-divider" style="margin:32px 0" />
+      <p class="small">If you want to discuss architecture tradeoffs for your use case, reach out at <a href="mailto:srivastavark@gmail.com" style="color:var(--accent-primary)">srivastavark@gmail.com</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-text">© 2026 Rajeev Srivastava · AI Search Architect & Agentic AI Engineer</div>
+      <div class="footer-links">
+        <a href="/insights/">Tech / Insights</a>
+        <a href="https://www.linkedin.com/in/srivastavark/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>

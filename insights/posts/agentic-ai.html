@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Pipelines to Reasoning Agents | Rajeev Srivastava</title>
+  <meta name="description" content="From Pipelines to Reasoning Agents — practical notes on agentic AI by Rajeev Srivastava."/>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="header">
+  <div class="container">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div>
+          <strong>Rajeev Srivastava</strong>
+          <span>AI Search Architect</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="/#about">Expertise</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/insights/">Tech / Insights</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle light theme" aria-pressed="false" title="Toggle theme">☀︎</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="btn primary" href="/#contact">Let's Talk</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="article-page">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/insights/">Tech / Insights</a>
+      <span style="color:var(--text-muted);">/</span>
+      <span>Agentic AI</span>
+    </div>
+
+    <article class="post">
+      <div class="meta">AGENTIC AI</div>
+      <h1>From Pipelines to Reasoning Agents</h1>
+      <div class="post-meta">January 6, 2026 · 6 min read</div>
+
+      <h2>When you should NOT use agents</h2>
+      <p>If a deterministic pipeline solves it, use that. Agents introduce cost, variance, and new failure modes.</p>
+      <ul>
+        <li>Single-shot Q&A with stable retrieval.</li>
+        <li>Strict latency budgets without caching.</li>
+        <li>High-risk outputs without guardrails.</li>
+      </ul>
+
+      <h2>When agents are worth it</h2>
+      <p>Agents shine when the system must plan, call tools, verify, and iterate.</p>
+      <ul>
+        <li>Tool use (search, APIs, DB lookups).</li>
+        <li>Multi-step reasoning and validation.</li>
+        <li>Workflow orchestration (LangGraph-style state machines).</li>
+      </ul>
+
+      <h2>A safe agent design pattern</h2>
+      <p>Treat the agent as a coordinator — not a free-form chatbot.</p>
+      <ul>
+        <li>Constrain tools and schemas.</li>
+        <li>Log every tool call.</li>
+        <li>Add stop conditions and budget limits.</li>
+        <li>Verify answers with retrieval-backed citations.</li>
+      </ul>
+
+      <h2>What to log for reliability</h2>
+      <p>If you can't debug it, you can't ship it.</p>
+      <ul>
+        <li>Prompt version + tool parameters.</li>
+        <li>Retrieved docs (ids + scores).</li>
+        <li>Latency per step.</li>
+        <li>Refusals, retries, and fallbacks.</li>
+      </ul>
+
+      <hr class="section-divider" style="margin:32px 0" />
+      <p class="small">If you want to discuss architecture tradeoffs for your use case, reach out at <a href="mailto:srivastavark@gmail.com" style="color:var(--accent-primary)">srivastavark@gmail.com</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-text">© 2026 Rajeev Srivastava · AI Search Architect & Agentic AI Engineer</div>
+      <div class="footer-links">
+        <a href="/insights/">Tech / Insights</a>
+        <a href="https://www.linkedin.com/in/srivastavark/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>

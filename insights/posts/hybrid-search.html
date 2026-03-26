@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Designing Hybrid Search at Enterprise Scale | Rajeev Srivastava</title>
+  <meta name="description" content="Designing Hybrid Search at Enterprise Scale — practical notes on hybrid search architecture by Rajeev Srivastava."/>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="header">
+  <div class="container">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div>
+          <strong>Rajeev Srivastava</strong>
+          <span>AI Search Architect</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="/#about">Expertise</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/insights/">Tech / Insights</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle light theme" aria-pressed="false" title="Toggle theme">☀︎</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="btn primary" href="/#contact">Let's Talk</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="article-page">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/insights/">Tech / Insights</a>
+      <span style="color:var(--text-muted);">/</span>
+      <span>AI Search</span>
+    </div>
+
+    <article class="post">
+      <div class="meta">AI SEARCH</div>
+      <h1>Designing Hybrid Search at Enterprise Scale</h1>
+      <div class="post-meta">January 6, 2026 · 6 min read</div>
+
+      <h2>The core idea</h2>
+      <p>Hybrid search is not "BM25 + vectors". It's a system design problem: choose candidates, fuse signals, and keep latency predictable.</p>
+      <ul>
+        <li>Use lexical for precision and navigational intent.</li>
+        <li>Use semantic for recall and intent matching.</li>
+        <li>Add reranking only where it changes outcomes.</li>
+      </ul>
+
+      <h2>A practical blueprint</h2>
+      <p>A common pattern that stays stable across stacks (Elasticsearch/OpenSearch/MongoDB/Redis):</p>
+      <ul>
+        <li>Stage 1: lexical candidates (BM25, fields, boosts).</li>
+        <li>Stage 2: semantic candidates (ANN vector retrieval).</li>
+        <li>Stage 3: fuse scores (RRF / weighted sum) and apply business rules.</li>
+        <li>Stage 4: optional rerank (cross-encoder / LLM reranker) on a small top-K.</li>
+      </ul>
+
+      <h2>What to measure (so it doesn't become opinion)</h2>
+      <p>Treat relevance as an engineering loop. Build a small evaluation set and track it every time you change analyzers, embeddings, or fusion weights.</p>
+      <ul>
+        <li>Offline: NDCG@K / MRR / Recall@K.</li>
+        <li>Online: CTR, reformulation rate, zero-result rate, latency p95/p99.</li>
+      </ul>
+
+      <h2>Common failure modes</h2>
+      <p>Most hybrid rollouts fail due to uncontrolled cost/latency or uncontrolled drift in embeddings.</p>
+      <ul>
+        <li>Reranking too deep (K too large).</li>
+        <li>No query-class routing (everything uses the same pipeline).</li>
+        <li>No guardrails for "semantic hallucination" in UI snippets.</li>
+      </ul>
+
+      <hr class="section-divider" style="margin:32px 0" />
+      <p class="small">If you want to discuss architecture tradeoffs for your use case, reach out at <a href="mailto:srivastavark@gmail.com" style="color:var(--accent-primary)">srivastavark@gmail.com</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-text">© 2026 Rajeev Srivastava · AI Search Architect & Agentic AI Engineer</div>
+      <div class="footer-links">
+        <a href="/insights/">Tech / Insights</a>
+        <a href="https://www.linkedin.com/in/srivastavark/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>
