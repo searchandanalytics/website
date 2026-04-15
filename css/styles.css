@@ -1000,6 +1000,14 @@ code { font-family: 'JetBrains Mono', monospace; }
   .card { padding: 20px; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
+
+  /* Keep the brand inside the 72px header on narrow screens */
+  .nav { gap: 10px; }
+  .brand { gap: 10px; min-width: 0; }
+  .brand-mark { display: none; }
+  .brand strong { font-size: 14px; white-space: nowrap; }
+  .brand span { display: none; }
+  .nav .btn { padding: 10px 14px; font-size: 13px; white-space: nowrap; }
 }
 
 /* ─── Light theme override ─────────────────────────────── */
